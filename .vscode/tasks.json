@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Confluxia",
+            "type": "shell",
+            "command": "clear; ./.build && ./Confluxia.exe",
+            "problemMatcher": []
+        }
+    ]
+}

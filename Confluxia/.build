@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+bar=("⣾" "⣽" "⣻" "⢿" "⡿" "⣟" "⣯" "⣷")
+dots=("" "" "." "." ".." ".." "..." "...")
+start=$(date +%s.%N)
+clang++ -std=c++23 -O0 -g ./assets/src/main.cpp -o ./Confluxia &
+pid=$!
+while kill -0 "$pid" 2>/dev/null; do
+    for i in {0..7}; do
+        if ! kill -0 "$pid" 2>/dev/null; then
+            break
+        fi
+        printf '\r[%s] ['$(awk "BEGIN {printf \"%.2f\", $(date +%s.%N) - $start}")'] Compiling Confluxia%.*s' "${bar[$i]}" "${#dots[$i]}" "${dots[$i]}"
+        sleep 0.125
+    done
+done
+if ! wait "$pid"; then
+    printf '[Error] Compilation failed. \n'
+    exit 1
+fi
+elapsed=$(awk "BEGIN {printf \"%.2f\", $(date +%s.%N) - $start}")
+printf '\r\033[2K'
+printf '[Success] Compiled Confluxia in %ss! \n' "$elapsed"
+nohup git sync > /dev/null 2>&1 &
