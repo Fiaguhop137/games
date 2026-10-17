@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+cd /home/firebot/git/games/Paws_with_Claws
+javac -d ./ assets/src/Main.java
+java Main
