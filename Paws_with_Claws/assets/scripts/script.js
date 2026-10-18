@@ -1,5 +1,5 @@
 const body=document.getElementById("body");
-body.innerHTML="<div id='title-screen'><h1 id='title'>Paws with Claws</h1><p id='welcome'>Welcome to the game!</p><button id='startButton'>Start Game</button></p></div>";
+body.innerHTML="<div id='title-screen'><h1 id='title'>Paws with Claws</h1><p id='welcome'>Welcome to the game!</p><button id='startButton'>Start Game</button></div>";
 const startButton=document.getElementById("startButton");
 startButton.addEventListener("click",function(){
     body.innerHTML="<div id='game-screen'><div id='channel-up'></div><div id='channel-down'></div><div id='channel-left'></div><div id='channel-right'></div></div>";

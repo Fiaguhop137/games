@@ -19,10 +19,11 @@ body {
 #title {
     margin: 0 0 16px;
     color: #f08bb8;
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(1.5rem, 8vw, 4rem);
     font-weight: 900;
     text-align: center;
     text-shadow: 2px 3px 0 #ffe0ee;
+    white-space: nowrap;
 }
 #welcome {
     color: #a58a9b;
