@@ -1,3 +1,4 @@
+#This is an old, deprecated version of the game. It is not recommended to use this version, as it is not maintained and is missing many features. Please use the latest version of the game instead. It can be found at https://github.com/Fiaguhop137/games/tree/main/Confluxia
 import random
 BASIC_POWERS=["fire","metal","wood","earth","water"]
 ALIGNMENTS=["light","dark"]
