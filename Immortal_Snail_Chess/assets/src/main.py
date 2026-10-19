@@ -8,6 +8,12 @@ clock=pygame.time.Clock()
 running=True
 background=pygame.image.load(os.path.join(BASE_DIR,"../textures/chessboard.png")).convert()
 background=pygame.transform.scale(background,(WIDTH,HEIGHT))
+PIECES={}
+for color in ["white","black"]:
+    for piece in ["king","queen","rook","bishop","knight","pawn"]:
+        name=f"{color}_{piece}"
+        path=os.path.join(BASE_DIR,"../textures",f"{name}.png")
+        PIECES[name]=pygame.image.load(path).convert_alpha()
 class Snail:
     def __init__(self,x,y):
         self.x=x
