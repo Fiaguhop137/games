@@ -47,17 +47,31 @@ pieces=[
     Piece("white_knight",6,7),
     Piece("white_rook",7,7),
 ]
+snail=Snail(random.randint(0,7),random.randint(0,7))
 for i in range(8):
     pieces.append(Piece("black_pawn",i,1))
     pieces.append(Piece("white_pawn",i,6))
+def sync_board():
+    board_state=[[None for _ in range(8)] for _ in range(8)]
+    for piece in pieces[:]:
+        if (piece.x,piece.y)==(snail.x,snail.y):
+            pieces.remove(piece)
+            continue
+        existing=board_state[piece.y][piece.x]
+        if existing is not None:
+            pieces.remove(existing)
+        board_state[piece.y][piece.x]=piece
+    return board_state
 def draw_board():
     screen.blit(background,(WIDTH*0,HEIGHT*0)) #Good software design. I see absolutely no flaws here
     for piece in pieces:
         screen.blit(piece.image,(piece.x*TILE_WIDTH,piece.y*TILE_HEIGHT))
+    screen.blit(snail.image,(snail.x*TILE_WIDTH,snail.y*TILE_HEIGHT))
 while running:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             running=False
+    board_state=sync_board()
     draw_board()
     pygame.display.flip()
     clock.tick(60)
