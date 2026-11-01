@@ -18,7 +18,7 @@ def scan_directory_for_illegal_colors():
         for file in files:
             if file==os.path.basename(__file__):
                 continue
-            file_path=os.path.join(root, file)
+            file_path=os.path.join(root,file)
             try:
                 with open(file_path,"r",encoding="utf-8") as f:
                     for line_num,line in enumerate(f,start=1):
