@@ -1,8 +1,9 @@
 import os,re
 def color_check(r,g,b):
-    if b>r and b>g:
-        return True
-    return False
+    c=255-r
+    m=255-g
+    y=255-b
+    return c>m and c>y
 def hex_to_rgb(hex_str):
     if len(hex_str)==3:
         hex_str="".join([char*2 for char in hex_str])
