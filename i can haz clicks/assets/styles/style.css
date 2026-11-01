@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff0f5;
+    color: #594653;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+#body {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#header {
+    background: #ffb6c9;
+    color: #713e56;
+    text-align: center;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 0 #e99bb2;
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#catContainer,
+#sidebar {
+    background: #fffafc;
+    border: 2px solid #f5c4d3;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 4px 10px #e8b5c555;
+}
+
+#catContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 500px;
+}
+
+#catContainer p {
+    font-size: 1.1rem;
+}
+
+#clickButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.1s;
+}
+
+#clickButton:hover {
+    transform: scale(1.05);
+}
+
+#clickButton:active {
+    transform: scale(0.92);
+}
+
+#clickButton img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#clickCount {
+    font-size: 2rem !important;
+    font-weight: bold;
+    color: #d66b91;
+}
+
+#sidebar {
+    height: fit-content;
+}
+
+#shop h2 {
+    color: #d66b91;
+    text-align: center;
+    margin-top: 0;
+}
+
+#shopAlert {
+    background: #ffe4ed;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.9rem;
+}
+
+.shopItem {
+    background: #fff0f5;
+    border: 1px solid #f5c4d3;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 12px;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.shopItem:hover {
+    background: #ffe4ed;
+    transform: translateY(-2px);
+}
+
+.shopItem h3 {
+    margin: 0 0 8px;
+    color: #b85b7d;
+}
+
+.shopItem p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+button {
+    font-family: inherit;
+}
+
+.shopItem button {
+    background: #ffadc5;
+    color: #713e56;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.shopItem button:hover {
+    background: #ff91b4;
+}
+
+.shopItem button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 750px) {
+    #content {
+        grid-template-columns: 1fr;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+
+    #catContainer {
+        min-height: 350px;
+    }
+
+    #clickButton img {
+        width: 200px;
+        height: 200px;
+    }
+}
